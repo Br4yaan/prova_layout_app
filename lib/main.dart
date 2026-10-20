@@ -1,3 +1,4 @@
+import 'widgets/bloco_estatistica.dart';
 // Desafio 6: substituindo o Container por Card com elevation 4
 Card(
   elevation: 4,
