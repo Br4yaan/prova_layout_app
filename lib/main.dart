@@ -1,30 +1,35 @@
-import 'widgets/bloco_estatistica.dart';
-// Desafio 6: substituindo o Container por Card com elevation 4
-Card(
-  elevation: 4,
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12),
-  ),
-  child: Padding(
-    padding: const EdgeInsets.all(20.0),
-    child: Row(
-      children: [
-        const Icon(Icons.star, size: 48, color: Colors.amber),
-        const SizedBox(width: 16),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
-              'Gavião-Real',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'Avistado no Parque Central',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ],
-        ),
-      ],
+// Desafio 8: Refatoracao para GridView.count (grade 2x2)
+GridView.count(
+  shrinkWrap: true,
+  physics: const NeverScrollableScrollPhysics(),
+  crossAxisCount: 2,
+  crossAxisSpacing: 12,
+  mainAxisSpacing: 12,
+  childAspectRatio: 1.1,
+  children: [
+    BlocoEstatistica(
+      icone: Icons.flutter_dash,
+      valor: '124',
+      titulo: 'Aves Vistas',
+      corFundo: Colors.teal.shade100,
     ),
-  ),
+    BlocoEstatistica(
+      icone: Icons.place,
+      valor: '18',
+      titulo: 'Locais Visitados',
+      corFundo: Colors.teal.shade50,
+    ),
+    BlocoEstatistica(
+      icone: Icons.camera_alt,
+      valor: '45',
+      titulo: 'Fotos',
+      corFundo: Colors.teal.shade100,
+    ),
+    BlocoEstatistica(
+      icone: Icons.star,
+      valor: '5',
+      titulo: 'Especialidades',
+      corFundo: Colors.teal.shade50,
+    ),
+  ],
 ),
